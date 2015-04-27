@@ -78,6 +78,7 @@ write_orders
       {
         "order_item_id":123,
         "item_id":1001,
+        "variation_id":101,
         "title":"Tシャツ",
         "variation":"サイズM",
         "price":2000,
@@ -88,6 +89,7 @@ write_orders
       {
         "order_item_id":124,
         "item_id":1002,
+        "variation_id":201,
         "title":"ロングTシャツ",
         "variation":"サイズL",
         "price":3000,
@@ -126,7 +128,8 @@ write_orders
 * order_items - 購入商品情報
   * order_item_id - 購入商品ID
   * item_id - 商品ID
-  * variation - バリエーションの種類 (variation_idは持っていません)
+  * variation_id - バリエーションID
+  * variation - バリエーションの種類
   * price - 単価
   * amount - 数量
   * total - 合計金額 (単価 * 数量)
