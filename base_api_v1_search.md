@@ -90,7 +90,7 @@ client_idとclient_secretで認証します。
       
       "categories":[
         "Tシャツ",
-        "オシャレ",
+        "オシャレ"
       ]
     },
     {
@@ -153,7 +153,7 @@ client_idとclient_secretで認証します。
       
       "categories":[
         "Tシャツ",
-        "奇抜",
+        "奇抜"
       ]
     }
   ]
