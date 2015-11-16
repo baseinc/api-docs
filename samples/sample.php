@@ -29,6 +29,7 @@ $request_options = array(
     'http' => array(
         'method' => 'GET',
         'header' => implode("\r\n", $headers),
+        'ignore_errors' => true,
     ),
 );
 $context = stream_context_create($request_options);
