@@ -15,6 +15,7 @@ $request_options = array(
         'method'  => 'POST',
         'content' => http_build_query($params),
         'header'  => implode("\r\n", $headers),
+        'ignore_errors' => true
     ),
 );
 $context = stream_context_create($request_options);
