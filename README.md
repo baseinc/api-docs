@@ -36,7 +36,7 @@ OAuth2.0の仕様については、下記の外部サイトを参照ください
 * http://openid-foundation-japan.github.io/rfc6749.ja.html
 * http://openid-foundation-japan.github.io/rfc6750.ja.html
 
-OAuth2.0のClient_idとClient_secretの取得には、BASE Developersへの利用登録と利用許可が必要です。下記URLから申請いただけます。
+OAuth2.0のclient_idとclient_secretの取得には、BASE Developersへの利用登録と利用許可が必要です。下記URLから申請いただけます。
 * https://developers.thebase.in
 
 ### scope
