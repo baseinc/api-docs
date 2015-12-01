@@ -90,7 +90,7 @@ read_orders
 
 * unique_key - 注文情報を識別するユニークなキー
 * ordered - 注文日時
-* payment - 決済方法。creditcard:クレジットカード決済、bt:銀行振込(ショップ口座)、cod:代金引換、cvs:コンビニ決済、base_bt:銀行振込(BASE口座)
+* payment - 決済方法。creditcard:クレジットカード決済、bt:銀行振込(ショップ口座)、cod:代金引換、cvs:コンビニ決済、base_bt:銀行振込(BASE口座)、atobarai:後払い決済
 * shipping_fee - 送料
 * cod_fee 代引き手数料
 * total - 合計金額 (消費税、手数料含む)
