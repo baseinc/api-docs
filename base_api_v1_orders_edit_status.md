@@ -106,7 +106,7 @@ write_orders
 
 * unique_key - 注文情報を識別するユニークなキー
 * ordered - 注文日時
-* payment - 決済方法。creditcard:クレジットカード決済、bt:銀行振込(ショップ口座)、cod:代金引換、cvs:コンビニ決済、base_bt:銀行振込(BASE口座)
+* payment - 決済方法。creditcard:クレジットカード決済、bt:銀行振込(ショップ口座)、cod:代金引換、cvs:コンビニ決済、base_bt:銀行振込(BASE口座)、atobarai:後払い決済
 * shipping_fee - 送料
 * cod_fee 代引き手数料
 * total - 合計金額 (消費税、手数料含む)
@@ -206,6 +206,12 @@ write_orders
 ```
 ```
 {
+  "error":"not_cancel_atobarai",
+  "error_description":"後払い決済のキャンセルはできません。"
+}
+```
+```
+{
   "error":"not_change_status_ClubT",
   "error_description":"ClubTの商品は発注することにより、ステータスの変更が可能です。"
 }
@@ -226,6 +232,12 @@ write_orders
 {
   "error":"not_change_status_base_bt",
   "error_description":"銀行振込(BASE口座)決済の入金が完了していないのでステータスを変更できません。"
+}
+```
+```
+{
+  "error":"not_change_status_atobarai",
+  "error_description":"後払い決済のステータスは変更できません。"
 }
 ```
 ```
