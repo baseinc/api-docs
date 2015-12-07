@@ -1,20 +1,23 @@
 # POST /1/orders/edit_status
 
-注文情報のステータスを更新
+注文情報のステータスを更新 or 後払い決済ステータスを更新
 
-ステータスは3種類あります。
+注文情報のステータスは3種類あります。
 
 * ordered (未発送)
 * dispatched (発送完了)
-* cancelled (キャンセル済み)
+* cancelled (キャンセル)
 
-ordered から、dispatched か cancelled にのみ更新できます。
+ordered から、dispatched か cancelled にのみ更新できます。クレジットカード決済の注文のキャンセルはお問い合わせからお願いします。コンビニ決済の注文はコンビニ決済ステータスがpaid(入金済み)の時だけdispatchedに更新できます。銀行振込(BASE口座)決済の注文は銀行振込(BASE口座)決済ステータスがpaid(入金済み)の時だけdispatchedに更新できます。
 
-クレジットカード決済の注文のキャンセルはお問い合わせからお願いします。
+後払い決済ステータスは4種類あります。
 
-コンビニ決済の注文はコンビニ決済ステータスがpaid(入金済み)の時だけdispatchedに更新できます。
+* ordered (未発送)
+* shipping (配送中)
+* arrived (着荷)
+* cancelled (キャンセル)
 
-銀行振込(BASE口座)決済の注文は銀行振込(BASE口座)決済ステータスがpaid(入金済み)の時だけdispatchedに更新できます。
+ordered から、shippingにのみ更新できます。後払い決済の場合、後払い決済ステータスの更新しかできません。
 
 ## scope
 
@@ -22,11 +25,14 @@ write_orders
 
 ## リクエストパラメーター
 
-| Name          | Description                               |
-|---------------|-------------------------------------------|
-| order_item_id | 購入商品ID (必須)                         |
-| status        | dispatched か cancelled のいずれか (必須) |
-| add_comment   | 発送メールに添付する一言メッセージ        |
+| Name                | Description                                                                 |
+|---------------------|-----------------------------------------------------------------------------|
+| order_item_id       | 購入商品ID (必須)                                                           |
+| status              | ステータス。dispatched か cancelled のいずれか (statusを変更する場合は必須) |
+| add_comment         | 発送メールに添付する一言メッセージ                                          |
+| atobarai_status     | 後払い決済ステータス。shippingのみ (atobarai_statusを変更する場合は必須)    |
+| delivery_company_id | 配送業者ID (atobarai_statusを変更する場合は必須)                            |
+| tracking_number     | 送り状番号 (atobarai_statusを変更する場合は必須)                            |
 
 ## レスポンスの例
 
@@ -49,6 +55,8 @@ write_orders
     "tel":"03-1234-5678",
     "remark":"午前中の配送を希望します。",
     "add_comment":"[配送業者]佐川急便 [送り状番号]1234-5678-90",
+    "delivery_company_id":3,
+    "tracking_number":"1234-1234-1234",
     "terminated":false,
     "order_receiver":{
       "first_name":"山田",
@@ -71,6 +79,10 @@ write_orders
       "status":null
     },
     "bt_payment_transaction":{
+      "collected_fee":null,
+      "status":null
+    },
+    "atobarai_payment_transaction":{
       "collected_fee":null,
       "status":null
     },
@@ -125,6 +137,9 @@ write_orders
 * bt_payment_transaction - 銀行振込(BASE口座)決済情報
   * collected_fee - 銀行振込(BASE口座)決済手数料
   * status - 銀行振込(BASE口座)決済ステータス。unpaid:入金待ち、paid:入金済み、cancelled:キャンセル、shortage:不足入金
+* atobarai_payment_transaction - 後払い決済情報
+  * collected_fee - 後払い決済手数料
+  * status - 後払い決済ステータス。ordered:未発送、shipping:配送中、arrived:着荷、cancelled:キャンセル
 * order_items - 購入商品情報
   * order_item_id - 購入商品ID
   * item_id - 商品ID
@@ -144,102 +159,126 @@ write_orders
   "error_description":"httpsでアクセスしてください。"
 }
 ```
+
 ```
 {
   "error":"invalid_request",
   "error_description":"アクセストークンが無効です。"
 }
 ```
+
 ```
 {
   "error":"invalid_scope",
   "error_description":"スコープが無効です。"
 }
 ```
+
 ```
 {
   "error":"not_post_method",
   "error_description":"POSTで送信してください。"
 }
 ```
+
 ```
 {
   "error":"no_params",
   "error_description":"order_item_idとstatusは必須です。"
 }
 ```
+
+```
+{
+  "error":"no_params",
+  "error_description":"order_item_idとatobarai_statusとdelivery_company_idとtracking_numberは必須です。"
+}
+```
+
 ```
 {
   "error":"no_order",
   "error_description":"注文情報が見つかりませんでした。"
 }
 ```
+
 ```
 {
   "error":"bad_params",
   "error_description":"不正なパラメーターです。"
 }
 ```
+
 ```
 {
   "error":"not_change_status",
   "error_description":"この注文のステータスは変更できません。"
 }
 ```
+
 ```
 {
   "error":"not_cancel_credit_card",
   "error_description":"クレジットカード決済のキャンセルはできません。"
 }
 ```
+
 ```
 {
   "error":"not_cancel_cvs",
   "error_description":"コンビニ決済のキャンセルはできません。"
 }
 ```
+
 ```
 {
   "error":"not_cancel_base_bt",
   "error_description":"銀行振込(BASE口座)決済のキャンセルはできません。"
 }
 ```
+
 ```
 {
   "error":"not_cancel_atobarai",
   "error_description":"後払い決済のキャンセルはできません。"
 }
 ```
+
 ```
 {
   "error":"not_change_status_ClubT",
   "error_description":"ClubTの商品は発注することにより、ステータスの変更が可能です。"
 }
 ```
+
 ```
 {
   "error":"not_change_status_SpCase",
   "error_description":"SpCaseの商品は発注することにより、ステータスの変更が可能です。"
 }
 ```
+
 ```
 {
   "error":"not_change_status_cvs",
   "error_description":"コンビニ決済の入金が完了していないのでステータスを変更できません。"
 }
 ```
+
 ```
 {
   "error":"not_change_status_base_bt",
   "error_description":"銀行振込(BASE口座)決済の入金が完了していないのでステータスを変更できません。"
 }
 ```
+
 ```
 {
   "error":"not_change_status_atobarai",
   "error_description":"後払い決済のステータスは変更できません。"
 }
 ```
+
 ```
 {
   "error":"db_error",
