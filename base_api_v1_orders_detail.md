@@ -116,8 +116,8 @@ read_orders
   * collected_fee - 銀行振込(BASE口座)決済手数料
   * status - 銀行振込(BASE口座)決済ステータス。unpaid:入金待ち、paid:入金済み、cancelled:キャンセル、shortage:不足入金
 * atobarai_payment_transaction - 後払い決済情報
-　* collected_fee - 後払い決済手数料
-　* status - 後払い決済ステータス。ordered:未発送、shipping:配送中、arrived:着荷、cancelled:キャンセル
+  * collected_fee - 後払い決済手数料
+  * status - 後払い決済ステータス。ordered:未発送、shipping:配送中、arrived:着荷、cancelled:キャンセル
 * order_items - 購入商品情報
   * order_item_id - 購入商品ID
   * item_id - 商品ID
