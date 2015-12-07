@@ -31,6 +31,8 @@ read_orders
     "tel":"03-1234-5678",
     "remark":"午前中の配送を希望します。",
     "add_comment":"[配送業者]佐川急便 [送り状番号]1234-5678-90",
+    "delivery_company_id":3,
+    "tracking_number":"1234-1234-1234",
     "terminated":false,
     "order_receiver":{
       "first_name":"山田",
@@ -53,6 +55,10 @@ read_orders
       "status":null
     },
     "bt_payment_transaction":{
+      "collected_fee":null,
+      "status":null
+    },
+    "atobarai_payment_transaction":{
       "collected_fee":null,
       "status":null
     },
@@ -109,6 +115,9 @@ read_orders
 * bt_payment_transaction - 銀行振込(BASE口座)決済情報
   * collected_fee - 銀行振込(BASE口座)決済手数料
   * status - 銀行振込(BASE口座)決済ステータス。unpaid:入金待ち、paid:入金済み、cancelled:キャンセル、shortage:不足入金
+* atobarai_payment_transaction - 後払い決済情報
+　* collected_fee - 後払い決済手数料
+　* status - 後払い決済ステータス。ordered:未発送、shipping:配送中、arrived:着荷、cancelled:キャンセル
 * order_items - 購入商品情報
   * order_item_id - 購入商品ID
   * item_id - 商品ID
