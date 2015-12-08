@@ -113,6 +113,10 @@ JSON形式でレスポンスを返します。
 
 * [GET /1/savings](base_api_v1_savings.md) - 振込申請情報の一覧を取得
 
+### DeliveryCompanies
+
+* [GET /1/delivery_companies](base_api_v1_delivery_companies.md) - 配送業者情報の一覧を取得
+
 ### Search
 
 * [GET /1/search](base_api_v1_search.md) - 商品の検索結果を取得
