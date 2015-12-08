@@ -17,7 +17,7 @@ ordered から、dispatched か cancelled にのみ更新できます。クレ�
 * arrived (着荷)
 * cancelled (キャンセル)
 
-ordered から、shippingにのみ更新できます。後払い決済の場合、後払い決済ステータスの更新しかできません。商品が到着すると後払い決済ステータスが arrived に更新され、ステータスが dispatched に更新されます。order_item_idは注文の中のどれかひとつを指定すれば、全体の後払い決済ステータスが変更されます。
+ordered から、shippingにのみ更新できます。後払い決済の場合、後払い決済ステータスの更新しかできません。商品が到着すると後払い決済ステータスが arrived に更新され、ステータスが dispatched に更新されます。order_item_idは注文の中のどれかひとつを指定すれば、全体の後払い決済ステータスが更新されます。
 
 ## scope
 
