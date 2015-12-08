@@ -54,9 +54,9 @@ write_orders
     "mail_address":"mail@hogehoge.com",
     "tel":"03-1234-5678",
     "remark":"午前中の配送を希望します。",
-    "add_comment":"[配送業者]佐川急便 [送り状番号]1234-5678-90",
+    "add_comment":"[配送業者]佐川急便 [送り状番号]123412341234",
     "delivery_company_id":3,
-    "tracking_number":"1234-1234-1234",
+    "tracking_number":"123412341234",
     "terminated":false,
     "order_receiver":{
       "first_name":"山田",
