@@ -17,7 +17,7 @@ ordered から、dispatched か cancelled にのみ更新できます。クレ�
 * arrived (着荷)
 * cancelled (キャンセル)
 
-ordered から、shippingにのみ更新できます。後払い決済の場合、後払い決済ステータスの更新しかできません。商品が到着すると後払い決済ステータスが arrived に更新され、ステータスが dispatched に更新されます。
+ordered から、shippingにのみ更新できます。後払い決済の場合、後払い決済ステータスの更新しかできません。商品が到着すると後払い決済ステータスが arrived に更新され、ステータスが dispatched に更新されます。order_item_idは注文の中のどれかひとつを指定すれば、全体の後払い決済ステータスが変更されます。
 
 ## scope
 
@@ -32,7 +32,7 @@ write_orders
 | add_comment         | 発送メールに添付する一言メッセージ                                          |
 | atobarai_status     | 後払い決済ステータス。shippingのみ (atobarai_statusを変更する場合は必須)    |
 | delivery_company_id | 配送業者ID (atobarai_statusを変更する場合は必須)                            |
-| tracking_number     | 送り状番号 (atobarai_statusを変更する場合は必須)                            |
+| tracking_number     | 送り状番号。半角英数のみ (atobarai_statusを変更する場合は必須)              |
 
 ## レスポンスの例
 
