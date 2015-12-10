@@ -72,7 +72,7 @@ read_orders
         "price":2000,
         "amount":2,
         "total":4000,
-        "status":"orderd",
+        "status":"ordered",
         "modified":1398231452
       },
       {
@@ -84,7 +84,7 @@ read_orders
         "price":3000,
         "amount":1,
         "total":3000,
-        "status":"orderd",
+        "status":"ordered",
         "modified":1396419762
       }
     ]
