@@ -107,7 +107,7 @@ write_orders
         "price":3000,
         "amount":1,
         "total":3000,
-        "status":"orderd"
+        "status":"ordered"
       }
     ]
   }
