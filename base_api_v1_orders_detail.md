@@ -23,6 +23,7 @@ read_orders
     "total":6800
     "first_name":"山田",
     "last_name":"太郎",
+    "country":"Japan",
     "zip_code":"106-0032",
     "prefecture":"東京都",
     "address":"港区六本木",
