@@ -56,7 +56,7 @@ read_savings
   * 事務手数料は2万円未満の場合、事務手数料は500円です。2万円以上の場合、事務手数料は0円です。
   * 振込手数料は一律250円です。
 * due_date - 入金期日
-* status - requested:申請中、processing:処理中、done:完了、rejected:拒否
+* status - requested:申請中、processing:処理中、done:完了、rejected:拒否、cancelled:キャンセル
 * created - 申請日時
 
 ## エラーレスポンスの例
