@@ -1,36 +1,29 @@
-# get access token from authentication code
-
+# retrieve access and refresh tokens
 require 'net/http'
 require 'json'
 
-API_VERSION   = 1
-API_HOST      = 'api.thebase.in'
-CODE          = ''
-CLIENT_ID     = ''
-CLIENT_SECRET = ''
-REDIRECT_URI  = ''
+API_VERSION        = 1
+API_HOST           = 'https://api.thebase.in'
+CODE               = '' # YOUR_CODE
+CLIENT_ID          = '' # YOUR_CLIENT_ID
+CLIENT_SECRET      = '' # YOUR_CLIENT_SECRET
+REDIRECT_URI       = 'http://localhost.local'
+AUTHORIZATION_CODE = 'authorization_code'
 
 request_parameters =
-  { grant_type: '',
-    client_id: CLIENT_ID,
+  { grant_type:    AUTHORIZATION_CODE,
+    client_id:     CLIENT_ID,
     client_secret: CLIENT_SECRET,
-    code: CODE,
-    redirect_uri: REDIRECT_URI }
+    code:          CODE,
+    redirect_uri:  REDIRECT_URI }
 
 uri =
-  URI(
+  URI.join(
     API_HOST,
-    "/#{API_VERSION}/oauth/token",
-    request_parameters)
-
-file                         = File.stat 'cached_response'
-request                      = Net::HTTP::Post.new uri
-request.content_type         = 'multipart/form-data'
-request['If-Modified-Since'] = file.mtime.rfc2822
+    "/#{API_VERSION}/oauth/token/")
 
 response =
-  Net::HTTP.start(
-    uri.host,
-    uri.port,
-    use_ssl: uri.scheme == 'https'
-  ) { |http| http.request request }
+  Net::HTTP.post_form(uri, request_parameters)
+
+parsed_response =
+  JSON.parse response.body
