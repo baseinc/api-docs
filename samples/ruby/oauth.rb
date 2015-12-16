@@ -7,7 +7,7 @@ API_HOST           = 'https://api.thebase.in'
 CODE               = '' # YOUR_CODE
 CLIENT_ID          = '' # YOUR_CLIENT_ID
 CLIENT_SECRET      = '' # YOUR_CLIENT_SECRET
-REDIRECT_URI       = 'http://localhost.local'
+REDIRECT_URI       = '' # YOUR_REDIRECT_URI
 AUTHORIZATION_CODE = 'authorization_code'
 
 request_parameters =
