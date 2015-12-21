@@ -7,22 +7,26 @@ API_HOST    = 'https://api.thebase.in'
 CODE        = '' # YOUR_CODE
 token       = '' # Retrieve token using ruby/oauth/token.rb
 
+header_parameters =
+  { 'Authorization' => "Bearer #{token}" }
+
 request_parameters =
-  { 'Authorization' => "Bearer #{token}",
-    'order'         => 'created',
-    'sort'          => 'desc',
-    'limit'         => '10',
-    'offset'        => '0' }
+  { 'order'  => 'created',
+    'sort'   => 'desc',
+    'limit'  => '10',
+    'offset' => '0' }
 
 uri =
-  URI.join(
+  URI([
     API_HOST,
-    "/#{API_VERSION}/items")
+    "/#{API_VERSION}/items/?",
+    URI.encode_www_form(request_parameters)]
+      .join)
 
 request =
   Net::HTTP::Get.new(
     uri,
-    request_parameters)
+    header_parameters)
 
 response =
   Net::HTTP.start(
