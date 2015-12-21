@@ -13,11 +13,9 @@ $params = array(
     'grant_type'    => 'authorization_code',
     'code'          => '', # YOUR_CODE
 );
-
 $headers = array(
     'Content-Type: application/x-www-form-urlencoded',
 );
-
 $request_options = array(
     'http' => array(
         'method'  => 'POST',
