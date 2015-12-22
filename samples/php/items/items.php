@@ -1,7 +1,7 @@
 <?php
 // 商品一覧を取得する
-define('API_HOST',      'https://api.thebase.in');
-define('API_VERSION',   '1');
+define('API_HOST',    'https://api.thebase.in');
+define('API_VERSION', '1');
 $token = ''; # YOUR ACCESS TOKEN
 
 $params = http_build_query(
@@ -17,8 +17,8 @@ $headers = array(
 );
 $request_options = array(
     'http' => array(
-        'method'  => 'GET',
-        'header'  => implode("\r\n", $headers),
+        'method' => 'GET',
+        'header' => implode("\r\n", $headers),
         'ignore_errors' => true,
     ),
 );
