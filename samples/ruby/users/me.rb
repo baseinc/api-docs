@@ -4,7 +4,6 @@ require 'json'
 
 API_VERSION = 1
 API_HOST    = 'https://api.thebase.in'
-CODE        = '' # Your CODE
 token       = '' # Retrieve token using ruby/oauth/token.rb
 
 header_parameters =
