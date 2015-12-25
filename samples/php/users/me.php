@@ -17,4 +17,4 @@ $request_options = array(
 $context = stream_context_create($request_options);
 
 $response_body = file_get_contents(API_HOST . '/' . API_VERSION . '/users/me', false, $context);
-$parsed_response = json_decode($response_body);
+$parsed_response = json_decode($response_body, true);
