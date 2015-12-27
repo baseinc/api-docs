@@ -4,8 +4,8 @@ require 'json'
 
 API_VERSION              = 1
 API_HOST                 = 'https://api.thebase.in'
-CLIENT_ID_FOR_SEARCH     = ''
-CLIENT_SECRET_FOR_SEARCH = ''
+CLIENT_ID_FOR_SEARCH     = '' # Your client_id for search API
+CLIENT_SECRET_FOR_SEARCH = '' # Your client_secret for search API
 
 search_words    = %w(Tシャツ シルクスクリーン 白).join ' '
 sort_by         = %w(order_count\ desc stock\ desc price\ asc).join ','
