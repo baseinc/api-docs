@@ -35,6 +35,7 @@ read_orders
     "delivery_company_id":3,
     "tracking_number":"1234-1234-1234",
     "terminated":false,
+    "dispatch_status":"ordered",
     "order_receiver":{
       "first_name":"山田",
       "last_name":"花子",
@@ -103,7 +104,8 @@ read_orders
 * total - 合計金額 (消費税、手数料含む)
 * remark - 備考欄
 * add_comment - 発送メールに添付する一言メッセージ
-* terminated - すべてが発送済みかキャンセルになっていればtrue
+* terminated - *[非推奨]* dispatch_statusを使ってください。すべてが発送済みかキャンセルになっていればtrue
+* dispatch_status - 注文ステータス。ordered:発送待ち、cancelled:キャンセル、dispatched:発送済み、unpaid:入金待ち、shipping:配送中
 * order_receiver - お届け先情報
 * order_discount - クーポン情報
   * discount - 割引金額
