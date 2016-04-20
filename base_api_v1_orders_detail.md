@@ -20,7 +20,7 @@ read_orders
     "payment":"creditcard",
     "shipping_fee":500,
     "cod_fee":300,
-    "total":6800
+    "total":6800,
     "first_name":"山田",
     "last_name":"太郎",
     "country":"Japan",
