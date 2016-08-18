@@ -20,7 +20,7 @@ client_idとclient_secretで認証します。
 | sort          | 並び順。item_id、price、stock、order_count、modifiedのascまたはdesc (例: order_count desc,item_id asc) (デフォルト: BASEのおすすめ順) |
 | start         | 取得するスタート位置 (デフォルト: 0)                             |
 | size          | 取得件数 (デフォルト: 10, MAX: 50)                               |
-| fields        | 検索対象のカラム (デフォルト: shop_name,title,detail,categories) |
+| fields        | 検索対象のカラム (デフォルト: shop_name,title,detail)            |
 | shop_id       | ショップID (任意)                                                |
 
 ## レスポンスの例
