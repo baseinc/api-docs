@@ -19,13 +19,35 @@ write_items
   "categories":[
     {
       "category_id":1234,
-      "name":"VネックTシャツ",
-      "list_order":1
+      "name":"メンズ",
+      "list_order":1,
+      "number":1,
+      "parent_number":0,
+      "code":"0001"
+    },
+    {
+      "category_id":1235,
+      "name":"トップス",
+      "list_order":1,
+      "number":2,
+      "parent_number":1,
+      "code":"0001-0002"
     },
     {
       "category_id":1236,
       "name":"Tシャツ",
-      "list_order":2
+      "list_order":1,
+      "number":3,
+      "parent_number":2,
+      "code":"0001-0002-0003"
+    },
+    {
+      "category_id":1237,
+      "name":"レディーズ",
+      "list_order":2,
+      "number":4,
+      "parent_number":0,
+      "code":"0004"
     }
   ]
 }
@@ -36,6 +58,9 @@ write_items
 * category_id - カテゴリーを識別するユニークなID
 * name - カテゴリー名
 * list_order - カテゴリーの並び順
+* number - カテゴリー番号
+* parent_number - 親カテゴリー番号
+* code - カテゴリーコード。カテゴリー番号をハイフンで繋げたもの。最大3階層まで。
 
 ## エラーレスポンスの例
 
