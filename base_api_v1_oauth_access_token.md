@@ -14,8 +14,6 @@
 | code          | 認可コード (必須)               |
 | redirect_uri  | 登録したコールバックURL (必須)  |
 
-※Basic認証を使った client_id と client_secret の検証もサポートしています。
-
 ## レスポンスの例
 
 ```
