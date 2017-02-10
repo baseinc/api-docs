@@ -18,6 +18,7 @@ read_orders
     "unique_key":"154D88A39E454289",
     "ordered":1396419762,
     "payment":"creditcard",
+    "shipping_method":"ヤマト運輸",
     "shipping_fee":500,
     "cod_fee":300,
     "total":6800,
@@ -75,6 +76,8 @@ read_orders
         "amount":2,
         "total":4000,
         "status":"ordered",
+        "shipping_method":null,
+        "shipping_fee":0,
         "modified":1398231452
       },
       {
@@ -87,6 +90,8 @@ read_orders
         "amount":1,
         "total":3000,
         "status":"ordered",
+        "shipping_method":null,
+        "shipping_fee":0,
         "modified":1396419762
       }
     ]
@@ -99,7 +104,8 @@ read_orders
 * unique_key - 注文情報を識別するユニークなキー
 * ordered - 注文日時
 * payment - 決済方法。creditcard:クレジットカード決済、bt:銀行振込(ショップ口座)、cod:代金引換、cvs:コンビニ決済、base_bt:銀行振込(BASE口座)、atobarai:後払い決済
-* shipping_fee - 送料
+* shipping_method - 配送方法 (注文に対して指定している場合と、商品ごとに指定している場合がある)
+* shipping_fee - 送料 (注文に対して指定している場合と、商品ごとに指定している場合がある)
 * cod_fee 代引き手数料
 * total - 合計金額 (消費税、手数料含む)
 * remark - 備考欄
