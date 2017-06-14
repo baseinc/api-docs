@@ -22,22 +22,28 @@ read_orders
     {
       "unique_key":"154D88A39E454289",
       "ordered":1396419762,
+      "cancelled":null,
+      "dispatched":1396528943,
       "payment":"creditcard",
       "first_name":"山田",
       "last_name":"太郎",
       "total":2000,
       "terminated":true,
-      "dispatch_status":"dispatched"
+      "dispatch_status":"dispatched",
+      "modified":1396528943
     },
     {
       "unique_key":"9CD3594222D78673",
       "ordered":1392345522,
+      "cancelled":null,
+      "dispatched":null,
       "payment":"cvs",
       "first_name":"山田",
       "last_name":"花子",
       "total":3500,
       "terminated":false,
-      "dispatch_status":"unpaid"
+      "dispatch_status":"unpaid",
+      "modified":1392345522
     }
   ]
 }
@@ -47,10 +53,13 @@ read_orders
 
 * unique_key - 注文情報を識別するユニークなキー
 * ordered - 注文日時
+* cancelled - キャンセル日時
+* dispatched - 発送日時
 * payment - 決済方法。creditcard:クレジットカード決済、bt:銀行振込(ショップ口座)、cod:代金引換、cvs:コンビニ決済、base_bt:銀行振込(BASE口座)、atobarai:後払い決済
 * total - 合計金額 (消費税、手数料含む)
 * terminated - *[非推奨]* dispatch_statusを使ってください。すべてが発送済みかキャンセルになっていればtrue。
 * dispatch_status - 注文ステータス。ordered:発送待ち、cancelled:キャンセル、dispatched:発送済み、unpaid:入金待ち、shipping:配送中
+* modified - 更新日時
 
 ## エラーレスポンスの例
 

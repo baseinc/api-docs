@@ -17,6 +17,8 @@ read_orders
   "order":{
     "unique_key":"154D88A39E454289",
     "ordered":1396419762,
+    "cancelled":null,
+    "dispatched":null,
     "payment":"creditcard",
     "shipping_fee":500,
     "cod_fee":300,
@@ -36,6 +38,7 @@ read_orders
     "tracking_number":"1234-1234-1234",
     "terminated":false,
     "dispatch_status":"ordered",
+    "modified":1396419762,
     "order_receiver":{
       "first_name":"山田",
       "last_name":"花子",
@@ -98,6 +101,8 @@ read_orders
 
 * unique_key - 注文情報を識別するユニークなキー
 * ordered - 注文日時
+* cancelled - キャンセル日時
+* dispatched - 発送日時
 * payment - 決済方法。creditcard:クレジットカード決済、bt:銀行振込(ショップ口座)、cod:代金引換、cvs:コンビニ決済、base_bt:銀行振込(BASE口座)、atobarai:後払い決済
 * shipping_fee - 送料
 * cod_fee 代引き手数料
@@ -106,6 +111,7 @@ read_orders
 * add_comment - 発送メールに添付する一言メッセージ
 * terminated - *[非推奨]* dispatch_statusを使ってください。すべてが発送済みかキャンセルになっていればtrue
 * dispatch_status - 注文ステータス。ordered:発送待ち、cancelled:キャンセル、dispatched:発送済み、unpaid:入金待ち、shipping:配送中
+* modified - 更新日時
 * order_receiver - お届け先情報
 * order_discount - クーポン情報
   * discount - 割引金額
@@ -130,7 +136,7 @@ read_orders
   * amount - 数量
   * total - 合計金額 (単価 * 数量)
   * status - ステータス。ordered:未発送、cancelled:キャンセル、dispatched:発送完了
-  * modified - 最終更新日時
+  * modified - 更新日時
 
 ## エラーレスポンスの例
 
