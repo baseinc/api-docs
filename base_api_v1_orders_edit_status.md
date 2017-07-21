@@ -48,8 +48,8 @@ write_orders
     "shipping_fee":500,
     "cod_fee":300,
     "total":6800
-    "first_name":"山田",
-    "last_name":"太郎",
+    "first_name":"太郎",
+    "last_name":"山田",
     "country":"Japan",
     "zip_code":"106-0032",
     "prefecture":"東京都",
@@ -65,8 +65,8 @@ write_orders
     "dispatch_status":"ordered",
     "modified":1398231452,
     "order_receiver":{
-      "first_name":"山田",
-      "last_name":"花子",
+      "first_name":"花子",
+      "last_name":"山田",
       "zip_code":"150-0043",
       "prefecture":"東京都",
       "address":"渋谷区道玄坂",
