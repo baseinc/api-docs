@@ -18,6 +18,7 @@ read_items
     "title":"Tシャツ",
     "detail":"とってもオシャレなTシャツです。",
     "price":3900,
+    "proper_price":null,
     "stock":10,
     "visible":1,
     "list_order":1,
@@ -90,7 +91,8 @@ read_items
 ## 解説
 
 * item_id - 商品を識別するユニークなID
-* price - 商品の値段 (税込み)
+* price - 商品の価格 (税込み)
+* proper_price - 商品の通常価格 (税込み)
 * stock - 在庫数
 * visible - 表示フラグ。1:表示、0:非表示
 * list_order - 表示順
