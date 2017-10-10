@@ -8,7 +8,7 @@
 * dispatched (発送完了)
 * cancelled (キャンセル)
 
-ordered から、dispatched か cancelled にのみ更新できます。クレジットカード決済の注文のキャンセルはお問い合わせからお願いします。コンビニ決済の注文はコンビニ決済ステータスがpaid(入金済み)の時だけdispatchedに更新できます。銀行振込(BASE口座)決済の注文は銀行振込(BASE口座)決済ステータスがpaid(入金済み)の時だけdispatchedに更新できます。
+ordered から、dispatched か cancelled にのみ更新できます。注文のキャンセルはBASE管理画面からお願いします。コンビニ決済の注文はコンビニ決済ステータスがpaid(入金済み)の時だけdispatchedに更新できます。銀行振込(BASE口座)決済の注文は銀行振込(BASE口座)決済ステータスがpaid(入金済み)の時だけdispatchedに更新できます。
 
 後払い決済ステータスは4種類あります。
 
@@ -92,6 +92,10 @@ write_orders
       "collected_fee":null,
       "status":null
     },
+    "carrier_payment_transaction":{
+      "collected_fee":null,
+      "status":null
+    },
     "order_items":[
       {
         "order_item_id":123,
@@ -132,7 +136,7 @@ write_orders
 * ordered - 注文日時
 * cancelled - キャンセル日時
 * dispatched - 発送日時
-* payment - 決済方法。creditcard:クレジットカード決済、bt:銀行振込(ショップ口座)、cod:代金引換、cvs:コンビニ決済、base_bt:銀行振込(BASE口座)、atobarai:後払い決済
+* payment - 決済方法。creditcard:クレジットカード決済、bt:銀行振込(ショップ口座)、cod:代金引換、cvs:コンビニ決済、base_bt:銀行振込(BASE口座)、atobarai:後払い決済、carrier_01:キャリア決済ドコモ、carrier_02:キャリア決済au、carrier_03:キャリア決済ソフトバンク
 * shipping_method - 配送方法 (注文に対して指定している場合と、商品ごとに指定している場合がある)
 * shipping_fee - 送料 (注文に対して指定している場合と、商品ごとに指定している場合がある)
 * cod_fee 代引き手数料
@@ -298,7 +302,15 @@ write_orders
 
 ```
 {
+  "error":"not_cancel_carrier",
+  "error_description":"キャリア決済のステータスは変更できません。"
+}
+```
+
+```
+{
   "error":"db_error",
   "error_description":"ステータスの変更ができませんでした。"
 }
 ```
+
