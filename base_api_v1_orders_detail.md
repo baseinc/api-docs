@@ -68,6 +68,10 @@ read_orders
       "collected_fee":null,
       "status":null
     },
+    "carrier_payment_transaction":{
+      "collected_fee":null,
+      "status":null
+    },
     "order_items":[
       {
         "order_item_id":123,
@@ -108,7 +112,7 @@ read_orders
 * ordered - 注文日時
 * cancelled - キャンセル日時
 * dispatched - 発送日時
-* payment - 決済方法。creditcard:クレジットカード決済、bt:銀行振込(ショップ口座)、cod:代金引換、cvs:コンビニ決済、base_bt:銀行振込(BASE口座)、atobarai:後払い決済
+* payment - 決済方法。creditcard:クレジットカード決済、bt:銀行振込(ショップ口座)、cod:代金引換、cvs:コンビニ決済、base_bt:銀行振込(BASE口座)、atobarai:後払い決済、carrier_01:キャリア決済ドコモ、carrier_02:キャリア決済au、carrier_03:キャリア決済ソフトバンク
 * shipping_method - 配送方法 (注文に対して指定している場合と、商品ごとに指定している場合がある)
 * shipping_fee - 送料 (注文に対して指定している場合と、商品ごとに指定している場合がある)
 * cod_fee 代引き手数料
