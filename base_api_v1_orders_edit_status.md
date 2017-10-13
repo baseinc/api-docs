@@ -29,7 +29,7 @@ write_orders
 |---------------------|-----------------------------------------------------------------------------|
 | order_item_id       | 購入商品ID (必須)                                                           |
 | status              | ステータス。dispatched か cancelled のいずれか (statusを変更する場合は必須) |
-| add_comment         | 発送メールに添付する一言メッセージ                                          |
+| add_comment         | 発送メールに添付する一言メッセージ (改行も含めて250文字以内)                |
 | atobarai_status     | 後払い決済ステータス。shippingのみ (atobarai_statusを変更する場合は必須)    |
 | delivery_company_id | 配送業者ID (atobarai_statusを変更する場合は必須)                            |
 | tracking_number     | 送り状番号。半角英数のみ (atobarai_statusを変更する場合は必須)              |
@@ -313,4 +313,3 @@ write_orders
   "error_description":"ステータスの変更ができませんでした。"
 }
 ```
-
