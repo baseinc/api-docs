@@ -77,6 +77,9 @@ write_orders
       "discount":1000,
       "note":"初売りクーポン"
     },
+    "order_charge":{
+      "collected_fee":100
+    },
     "c_c_payment_transaction":{
       "collected_fee":200
     },
@@ -150,6 +153,8 @@ write_orders
 * order_discount - クーポン情報
   * discount - 割引金額
   * note - クーポン名
+* order_charge - サービス利用料情報
+  * collected_fee - サービス利用料(2017年9月20日から徴収開始)
 * c_c_payment_transaction - クレジットカード決済情報
   * collected_fee - クレジット決済手数料
 * cvs_payment_transaction - コンビニ決済情報
