@@ -51,7 +51,8 @@ read_orders
     },
     "order_discount":{
       "discount":1000,
-      "note":"初売りクーポン"
+      "note":"初売りクーポン",
+      "is_allocate_user_balance_log":0
     },
     "order_charge":{
       "collected_fee":100
@@ -126,9 +127,10 @@ read_orders
 * dispatch_status - 注文ステータス。ordered:発送待ち、cancelled:キャンセル、dispatched:発送済み、unpaid:入金待ち、shipping:配送中
 * modified - 更新日時
 * order_receiver - お届け先情報
-* order_discount - クーポン情報
+* order_discount - 割引情報
   * discount - 割引金額
-  * note - クーポン名
+  * note - 割引名
+  * is_allocate_user_balance_log - BASE負担割引フラグ。0:ショップ負担割引、1:BASE負担割引
 * order_charge - サービス利用料情報
   * collected_fee - サービス利用料(2017年9月20日から徴収開始)
 * c_c_payment_transaction - クレジットカード決済情報
