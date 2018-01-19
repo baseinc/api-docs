@@ -8,7 +8,7 @@
 * dispatched (発送完了)
 * cancelled (キャンセル)
 
-ordered から、dispatched か cancelled にのみ更新できます。注文のキャンセルはBASE管理画面からお願いします。コンビニ決済の注文はコンビニ決済ステータスがpaid(入金済み)の時だけdispatchedに更新できます。銀行振込(BASE口座)決済の注文は銀行振込(BASE口座)決済ステータスがpaid(入金済み)の時だけdispatchedに更新できます。
+ordered から、dispatched か cancelled にのみ更新できます。cancelled に更新できるのは銀行振込(ショップ口座)決済と代金引換決済の注文だけです。その他の注文のキャンセルはBASE管理画面からお願いします。コンビニ決済の注文はコンビニ決済ステータスがpaid(入金済み)の時だけdispatchedに更新できます。銀行振込(BASE口座)決済の注文は銀行振込(BASE口座)決済ステータスがpaid(入金済み)の時だけdispatchedに更新できます。
 
 後払い決済ステータスは4種類あります。
 
@@ -17,7 +17,7 @@ ordered から、dispatched か cancelled にのみ更新できます。注文�
 * arrived (着荷)
 * cancelled (キャンセル)
 
-ordered から、shippingにのみ更新できます。後払い決済の場合、後払い決済ステータスの更新しかできません。商品が到着すると後払い決済ステータスが arrived に更新され、ステータスが dispatched に更新されます。order_item_idは注文の中のどれかひとつを指定すれば、全体の後払い決済ステータスが更新されます。
+ordered から、shipping にのみ更新できます。後払い決済の場合、後払い決済ステータスの更新しかできません。商品が到着すると後払い決済ステータスが arrived に更新され、ステータスが dispatched に更新されます。order_item_idは注文の中のどれかひとつを指定すれば、全体の後払い決済ステータスが更新されます。
 
 ## scope
 
