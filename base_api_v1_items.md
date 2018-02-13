@@ -10,7 +10,7 @@ read_items
 
 | Name         | Description                                                                                                    |
 |--------------|----------------------------------------------------------------------------------------------------------------|
-| order        | 並び替え項目。list_order か created のいずれか (任意 デフォルト: list_order)                                   |
+| order        | 並び替え項目。list_order、created、modifiedのいずれか (任意 デフォルト: list_order)                            |
 | sort         | 並び順。asc か desc のいずれか (任意 デフォルト: asc)                                                          |
 | limit        | リミット (任意 デフォルト: 20, MAX: 100)                                                                       |
 | offset       | オフセット (任意 デフォルト: 0)                                                                                |

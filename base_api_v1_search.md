@@ -35,7 +35,11 @@ client_idとclient_secretで認証します。
       "title":"Tシャツ",
       "detail":"とってもオシャレなTシャツです。",
       "price":3900,
+      "proper_price":null,
       "stock":10,
+      "visible":1,
+      "list_order":1,
+      "identifier":null,
 
       "img1_origin":"https://baseec2.s3.amazonaws.com/images/item/origin/45fc036c772c8469fa40396b2ef0fb9b.jpg",
       "img1_76":"https://baseec2.s3.amazonaws.com/images/item/76/45fc036c772c8469fa40396b2ef0fb9b.jpg",
@@ -83,6 +87,20 @@ client_idとclient_secretで認証します。
       "img5_sp_640":null,
 
       "modified":1355815892,
+      "variations":[
+        {
+          "variation_id":11,
+          "variation":"黒色",
+          "variation_stock":6,
+          "variation_identifier":null
+        },
+        {
+          "variation_id":12,
+          "variation":"白色",
+          "variation_stock":4,
+          "variation_identifier":null
+        }
+      ],
       
       "shop_id":"shop",
       "shop_name":"BASEショップ",
@@ -98,7 +116,11 @@ client_idとclient_secretで認証します。
       "title":"奇抜なTシャツ",
       "detail":"とっても奇抜なTシャツです。",
       "price":4900,
+      "proper_price":null,
       "stock":20,
+      "visible":1,
+      "list_order":1,
+      "identifier":null,
 
       "img1_origin":"https://baseec2.s3.amazonaws.com/images/item/origin/45fc036c772c8469fa40396b2ef0fb9b.jpg",
       "img1_76":"https://baseec2.s3.amazonaws.com/images/item/76/45fc036c772c8469fa40396b2ef0fb9b.jpg",
@@ -146,6 +168,7 @@ client_idとclient_secretで認証します。
       "img5_sp_640":null,
 
       "modified":1355815892,
+      "variations":[],
       
       "shop_id":"shop",
       "shop_name":"BASEショップ",
@@ -164,8 +187,17 @@ client_idとclient_secretで認証します。
 
 * item_id - 商品を識別するユニークなID
 * price - 商品の値段 (税込み)
+* proper_price - 商品の通常価格 (税込み)
 * stock - 在庫数
+* visible - 表示フラグ。1:表示、0:非表示
+* list_order - 表示順
+* identifier - 商品コード
 * img1_origin - 商品画像1のオリジナルサイズ。オリジナル以外はバッチで作成されるため、存在しない場合があります。
+* variations - バリエーション情報
+  * variation_id - バリエーションを識別するユニークなID
+  * variation - バリエーションの種類
+  * variation_stock - バリエーションの在庫数
+  * variation_identifier - バリエーションの商品コード
 
 ## エラーレスポンスの例
 
