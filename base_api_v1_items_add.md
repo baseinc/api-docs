@@ -21,6 +21,8 @@ write_items
 | variation_stock[0] ...      | バリエーションの在庫数 (任意)                         |
 | variation_identifier[0] ... | バリエーションの商品コード (任意)                     |
  
+※ titleとdetailに、絵文字(4bite文字)を含める事はできません。バリデーションエラーとなります。
+
 ※ variationとvariation_stockとvariation_identifierは配列で複数登録が可能です。
 
 ※ バリエーションがある場合はバリエーションの在庫数(variation_stock)の合計が在庫数(stock)になります。
