@@ -28,6 +28,8 @@ read_orders
       "first_name":"太郎",
       "last_name":"山田",
       "total":2000,
+      "delivery_date":"2018-03-19",
+      "delivery_time_zone":"0812",
       "terminated":true,
       "dispatch_status":"dispatched",
       "modified":1396528943
@@ -41,6 +43,8 @@ read_orders
       "first_name":"花子",
       "last_name":"山田",
       "total":3500,
+      "delivery_date":null,
+      "delivery_time_zone":null,
       "terminated":false,
       "dispatch_status":"unpaid",
       "modified":1392345522
@@ -57,6 +61,8 @@ read_orders
 * dispatched - 発送日時
 * payment - 決済方法。creditcard:クレジットカード決済、bt:銀行振込(ショップ口座)、cod:代金引換、cvs:コンビニ決済、base_bt:銀行振込(BASE口座)、atobarai:後払い決済、carrier_01:キャリア決済ドコモ、carrier_02:キャリア決済au、carrier_03:キャリア決済ソフトバンク
 * total - 合計金額 (消費税、手数料含む)
+* delivery_date - 配送日(yyyy-mm-dd)
+* delivery_time_zone - 配送時間帯。4ケタの数字(午前中 -> 0812、12時~14時 -> 1214)
 * terminated - *[非推奨]* dispatch_statusを使ってください。すべてが発送済みかキャンセルになっていればtrue。
 * dispatch_status - 注文ステータス。ordered:発送待ち、cancelled:キャンセル、dispatched:発送済み、unpaid:入金待ち、shipping:配送中
 * modified - 更新日時
