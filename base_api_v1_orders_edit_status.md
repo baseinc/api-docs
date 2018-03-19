@@ -61,6 +61,8 @@ write_orders
     "add_comment":"[配送業者]佐川急便 [送り状番号]123412341234",
     "delivery_company_id":3,
     "tracking_number":"123412341234",
+    "delivery_date":"2018-03-19",
+    "delivery_time_zone":"0812",
     "terminated":false,
     "dispatch_status":"ordered",
     "modified":1398231452,
@@ -147,6 +149,8 @@ write_orders
 * total - 合計金額 (消費税、手数料含む)
 * remark - 備考欄
 * add_comment - 発送メールに添付する一言メッセージ
+* delivery_date - 配送日
+* delivery_time_zone - 配送時間帯
 * terminated - *[非推奨]* dispatch_statusを使ってください。すべてが発送済みかキャンセルになっていればtrue
 * dispatch_status - 注文ステータス。ordered:発送待ち、cancelled:キャンセル、dispatched:発送済み、unpaid:入金待ち、shipping:配送中
 * modified - 更新日時
