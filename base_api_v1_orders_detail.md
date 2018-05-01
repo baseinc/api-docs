@@ -18,7 +18,7 @@ read_orders
     "unique_key":"154D88A39E454289",
     "ordered":1396419762,
     "cancelled":null,
-    "dispatched":null,
+    "dispatched":1396509935,
     "payment":"creditcard",
     "shipping_method":"ヤマト運輸",
     "shipping_fee":500,
@@ -40,8 +40,8 @@ read_orders
     "delivery_date":"2018-03-19",
     "delivery_time_zone":"0812",
     "terminated":false,
-    "dispatch_status":"ordered",
-    "modified":1396419762,
+    "dispatch_status":"dispatched",
+    "modified":1396509935,
     "order_receiver":{
       "first_name":"花子",
       "last_name":"山田",
@@ -78,6 +78,13 @@ read_orders
       "collected_fee":null,
       "status":null
     },
+    "user_balance_logs":[
+      {
+        "text":"154D88A39E454289の売上が確定しました",
+        "price":7048,
+        "created":1396509935
+      }
+    ],
     "order_items":[
       {
         "order_item_id":123,
@@ -148,6 +155,13 @@ read_orders
 * atobarai_payment_transaction - 後払い決済情報
   * collected_fee - 後払い決済手数料
   * status - 後払い決済ステータス。ordered:未発送、shipping:配送中、arrived:着荷、cancelled:キャンセル
+* carrier_payment_transaction - キャリア決済情報
+  * collected_fee - キャリア決済手数料
+  * status - キャリア決済ステータス。authorized:与信確保、captured:売上確定、cancelled:キャンセル
+* user_balance_logs - お金履歴情報
+  * text - 見出しテキスト
+  * price - 金額
+  * created - 作成日時
 * order_items - 購入商品情報
   * order_item_id - 購入商品ID
   * item_id - 商品ID
