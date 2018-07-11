@@ -47,7 +47,7 @@ write_orders
     "shipping_method":"ヤマト運輸",
     "shipping_fee":500,
     "cod_fee":300,
-    "total":6800
+    "total":5800
     "first_name":"太郎",
     "last_name":"山田",
     "country":"Japan",
@@ -80,11 +80,16 @@ write_orders
       "note":"初売りクーポン",
       "is_allocate_user_balance_log":0
     },
+    "order_header_coin":{
+      "discount":1000,
+      "note":"コイン「HOGEコイン」の利用"
+    },
     "order_charge":{
       "collected_fee":100
     },
     "c_c_payment_transaction":{
-      "collected_fee":200
+      "collected_fee":200,
+      "status":"captured"
     },
     "cvs_payment_transaction":{
       "collected_fee":null,
@@ -102,12 +107,26 @@ write_orders
       "collected_fee":null,
       "status":null
     },
+    "coin_payment_transaction":{
+      "collected_fee":null,
+      "status":null
+    },
     "user_balance_logs":[
       {
         "text":"154D88A39E454289の売上が確定しました",
         "price":7048,
         "created":1396509935
-      }
+      },
+      {
+        "text":"154D88A39E454289ののヤマト配送料",
+        "price":-500,
+        "created":1396509935
+      },
+      {
+        "text":"154D88A39E454289のヤマト配送料の差額",
+        "price":-200,
+        "created":1396519935
+       }
     ],
     "order_items":[
       {
@@ -149,7 +168,7 @@ write_orders
 * ordered - 注文日時
 * cancelled - キャンセル日時
 * dispatched - 発送日時
-* payment - 決済方法。creditcard:クレジットカード決済、bt:銀行振込(ショップ口座)、cod:代金引換、cvs:コンビニ決済、base_bt:銀行振込(BASE口座)、atobarai:後払い決済、carrier_01:キャリア決済ドコモ、carrier_02:キャリア決済au、carrier_03:キャリア決済ソフトバンク
+* payment - 決済方法。creditcard:クレジットカード決済、bt:銀行振込(ショップ口座)、cod:代金引換、cvs:コンビニ決済、base_bt:銀行振込(BASE口座)、atobarai:後払い決済、carrier_01:キャリア決済ドコモ、carrier_02:キャリア決済au、carrier_03:キャリア決済ソフトバンク、coin:コイン決済
 * shipping_method - 配送方法 (注文に対して指定している場合と、商品ごとに指定している場合がある)
 * shipping_fee - 送料 (注文に対して指定している場合と、商品ごとに指定している場合がある)
 * cod_fee 代引き手数料
@@ -166,10 +185,14 @@ write_orders
   * discount - 割引金額
   * note - 割引名
   * is_allocate_user_balance_log - BASE負担割引フラグ。0:ショップ負担割引、1:BASE負担割引
+* order_header_coin - コイン割引情報
+  * discount - 割引金額
+  * note - 割引名
 * order_charge - サービス利用料情報
   * collected_fee - サービス利用料(2017年9月20日から徴収開始)
 * c_c_payment_transaction - クレジットカード決済情報
   * collected_fee - クレジット決済手数料
+  * status - クレジットカード決済ステータス。creditable:与信確保、captured:売上確定、cancelled:キャンセル
 * cvs_payment_transaction - コンビニ決済情報
   * collected_fee - コンビニ決済手数料
   * status - コンビニ決済ステータス。unpaid:入金待ち、paid:入金済み、cancelled:キャンセル
@@ -292,6 +315,20 @@ write_orders
 
 ```
 {
+  "error":"not_cancel_carrier",
+  "error_description":"キャリア決済のキャンセルはできません。"
+}
+```
+
+```
+{
+  "error":"not_cancel_coin",
+  "error_description":"コイン決済のキャンセルはできません。"
+}
+```
+
+```
+{
   "error":"not_change_status_ClubT",
   "error_description":"ClubTの商品は発注することにより、ステータスの変更が可能です。"
 }
@@ -301,6 +338,13 @@ write_orders
 {
   "error":"not_change_status_SpCase",
   "error_description":"SpCaseの商品は発注することにより、ステータスの変更が可能です。"
+}
+```
+
+```
+{
+  "error":"not_change_status_YamatoDelivery",
+  "error_description":"ヤマトかんたん発送Appを利用した注文の発送はできません。"
 }
 ```
 
