@@ -119,7 +119,7 @@ JSON形式でレスポンスを返します。
 
 ### Search
 
-* [GET /1/search](base_api_v1_search.md) - 商品の検索結果を取得
+* [GET /1/search](base_api_v1_search.md) - BASE全体の商品の検索結果を取得
 * [GET /1/search/refresh](base_api_v1_search_refresh.md) - 検索で取得した商品情報を再取得
 
 ## APIの利用制限
