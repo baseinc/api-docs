@@ -81,6 +81,7 @@ JSON形式でレスポンスを返します。
 ### Items
 
 * [GET /1/items](base_api_v1_items.md) - 商品情報の一覧を取得
+* [GET /1/items/search](base_api_v1_items_search.md) - ショップ内の商品の検索結果を取得
 * [GET /1/items/detail/:item_id](base_api_v1_items_detail.md) - 商品情報を取得
 * [POST /1/items/add](base_api_v1_items_add.md) - 商品情報を登録
 * [POST /1/items/edit](base_api_v1_items_edit.md) - 商品情報を更新

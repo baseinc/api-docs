@@ -27,7 +27,8 @@ write_items
     "visible":1,
     "list_order":1,
     "identifier":"abcd-1234",
-    
+    "modified":1414731174,
+
     "img1_origin":null,
     "img1_76":null,
     "img1_146":null,
@@ -73,7 +74,6 @@ write_items
     "img5_sp_480":null,
     "img5_sp_640":null,
 
-    "modified":1414731174,
     "variations":[
       {
         "variation_id":11,
