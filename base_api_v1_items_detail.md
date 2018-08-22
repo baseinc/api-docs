@@ -23,7 +23,8 @@ read_items
     "visible":1,
     "list_order":1,
     "identifier":null,
-    
+    "modified":1414731174,
+
     "img1_origin":"https://baseec2.s3.amazonaws.com/images/item/origin/45fc036c772c8469fa40396b2ef0fb9b.jpg",
     "img1_76":"https://baseec2.s3.amazonaws.com/images/item/76/45fc036c772c8469fa40396b2ef0fb9b.jpg",
     "img1_146":"https://baseec2.s3.amazonaws.com/images/item/146/45fc036c772c8469fa40396b2ef0fb9b.jpg",
@@ -69,7 +70,6 @@ read_items
     "img5_sp_480":null,
     "img5_sp_640":null,
 
-    "modified":1414731174,
     "variations":[
       {
         "variation_id":11,
