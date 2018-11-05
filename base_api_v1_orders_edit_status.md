@@ -80,6 +80,9 @@ write_orders
       "note":"初売りクーポン",
       "is_allocate_user_balance_log":0
     },
+    "order_amount_adjustment":{
+      "adjusted_amount":-100
+    },
     "order_header_coin":{
       "discount":1000,
       "note":"コイン「HOGEコイン」の利用"
@@ -185,6 +188,8 @@ write_orders
   * discount - 割引金額
   * note - 割引名
   * is_allocate_user_balance_log - BASE負担割引フラグ。0:ショップ負担割引、1:BASE負担割引
+* order_amount_adjustment - 金額調整情報
+  * adjusted_amount - 調整金額
 * order_header_coin - コイン割引情報
   * discount - 割引金額
   * note - 割引名
