@@ -160,7 +160,12 @@ write_orders
         "status":"ordered",
         "modified":1396419762
       }
-    ]
+    ],
+    "subscription": {
+      "unique_key": "SABCDEF123456780",
+      "repeat_number": 1,
+      "repeat_times": 12
+    },
   }
 }
 ```
@@ -224,6 +229,10 @@ write_orders
   * total - 合計金額 (単価 * 数量)
   * status - ステータス。ordered:未発送、cancelled:キャンセル、dispatched:発送完了
   * modified - 更新日時
+* subscription - 定期便注文情報
+  * unique_key - 定期便ID（定期便注文でないときはnull）
+  * repeat_number - 注文回数。今回の注文が定期便で何回目の注文であるか。（定期便注文でないときはnull）
+  * repeat_times - 継続回数。この定期便が全部で何回継続されるか。回数無制限のときは0。（定期便注文でないときはnull）
 
 ## エラーレスポンスの例
 
